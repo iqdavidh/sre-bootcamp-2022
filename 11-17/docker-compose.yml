@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  terra17:
+    build:
+      context: .
+      args:
+        #dev|test|prod
+        - APP_ENV=dev
+        - AWS_ACCESS_KEY_ID=use-dockercompose-override
+        - AWS_SECRET_ACCESS_KEY=use-dockercompose-override
+    container_name:
+      terra17
+    #environment:
+    #  - AWS_REGION=us-east-1
+
+    volumes:
+      - .:/usr/data
+#docker-compose up --build -d --remove-orphans
+
+
+
+
+#docker-compose run terra17 bash
+
